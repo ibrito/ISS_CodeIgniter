@@ -6,25 +6,25 @@ ISS_CodeIgniter is a project developed with [CodeIgniter 3.1.6](https://codeigni
 
 ```
 -www
-	|-ISS_CodeIgniter
-		|-application
-			|-controllers
-				\-IssController.php
-				\-SiteController.php
-			|-views
-				|-iss
-					\-headers.php
-					\-index.php
-				|-site
-					\-headers.php
-					\-index.php
-		|-assets
-			|-brand
-			|-css
-			|-flash
-			|-fonts
-			|-img
-			|-js
+ |-ISS_CodeIgniter
+	|-application
+		|-controllers
+			\-IssController.php
+			\-SiteController.php
+		|-views
+			|-iss
+				\-headers.php
+				\-index.php
+			|-site
+				\-headers.php
+				\-index.php
+	|-assets
+		|-brand
+		|-css
+		|-flash
+		|-fonts
+		|-img
+		|-js
 
 
 ```
