@@ -29,7 +29,7 @@ ISS_CodeIgniter is a project developed with [CodeIgniter 3.1.6](https://codeigni
 		|-js
 ```
 ## application/config/config.php
-In the file config.php the directive was changed ***$config['base_url'] = '';*** by ***$config['base_url'] ='http://localhost/ISS_CodeIgniter';***
+In the file config.php the directive was changed "***$config['base_url'] = '';***"   by  "***$config['base_url'] ='http://localhost/ISS_CodeIgniter';***"
 
 ```php
 $config['base_url'] = 'http://localhost/ISS_CodeIgniter';
