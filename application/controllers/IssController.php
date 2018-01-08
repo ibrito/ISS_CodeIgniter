@@ -22,11 +22,16 @@ class IssController extends CI_Controller {
 
 	public function index()
 	{
-            $datos['titulo']= 'ISS-DATA';
-            $datos['app']= APP_NAME;
-            $data['ubicacion']= $this->issLocation();
-            $data['tiempo_paso']= $this->issPassTimes();
-            $data['personas']= $this->issPeopleSpace();
+            $datos['titulo']        = 'ISS-DATA';
+            $datos['author']        = APP_AUTHOR;
+            $datos['lang']          = APP_LANG;
+            $datos['description']   = APP_DESCRIPTION;
+            $datos['app']           = APP_NAME;
+
+            $data['ubicacion']      = $this->issLocation();
+            $data['tiempo_paso']    = $this->issPassTimes();
+            $data['personas']       = $this->issPeopleSpace();
+            
             $this->load->view('iss/headers',$datos);
             $this->load->view('iss/index',$data);
 
