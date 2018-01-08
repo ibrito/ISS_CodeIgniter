@@ -86,20 +86,22 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   $vueltas=$value['response'];
                 };
                 $nc=1;
+                $objTabla='';
                 foreach ($vueltas as $value) {
-                  echo '<tr>';
-                    echo '<th scope="row">'. $nc.'</th>';
-                    echo '<td>'.$tiempo_paso['data']['message'].'</td>'; 
-                    echo '<td>'.$tiempo_paso['data']['request']->altitude.'</td>'; 
-                    echo '<td>'.date('m/d/Y H:i:s',$tiempo_paso['data']['request']->datetime).'</td>'; 
-                    echo '<td>'.$tiempo_paso['data']['request']->latitude.'</td>'; 
-                    echo '<td>'.$tiempo_paso['data']['request']->longitude.'</td>'; 
-                    echo '<td>'.$tiempo_paso['data']['request']->passes.'</td>'; 
-                    echo '<td>'.$value->duration.'</td>'; 
-                    echo '<td>'.$value->risetime.'</td>'; 
-                  echo '</tr>'; 
+                  $objTabla .='<tr>';
+                  $objTabla .= '<th scope="row">'. $nc.'</th>';
+                    $objTabla .= '<td>'.$tiempo_paso['data']['message'].'</td>'; 
+                    $objTabla .= '<td>'.$tiempo_paso['data']['request']->altitude.'</td>'; 
+                    $objTabla .= '<td>'.date('m/d/Y H:i:s',$tiempo_paso['data']['request']->datetime).'</td>'; 
+                    $objTabla .= '<td>'.$tiempo_paso['data']['request']->latitude.'</td>'; 
+                    $objTabla .= '<td>'.$tiempo_paso['data']['request']->longitude.'</td>'; 
+                    $objTabla .= '<td>'.$tiempo_paso['data']['request']->passes.'</td>'; 
+                    $objTabla .= '<td>'.$value->duration.'</td>'; 
+                    $objTabla .= '<td>'.$value->risetime.'</td>'; 
+                  $objTabla .= '</tr>'; 
                   $nc++;     
-                };    
+                };
+                echo $objTabla;    
               ?>
             </tbody>
           </table>
@@ -126,35 +128,31 @@ defined('BASEPATH') OR exit('No direct script access allowed');
                   $astro=$value['people'];
                 };
                 $nc=1;
+                $objTabla='';
                 foreach ($astro as $value) {
-                  echo '<tr>';
-                    echo '<th scope="row">'. $nc.'</th>';
-
-                    echo '<td>'.$value->craft.'</td>'; 
-                    echo '<td>'.$value->name.'</td>'; 
-                    echo '<td>'.$personas['data']['message'].'</td>';
-                  echo '</tr>'; 
+                  $objTabla .= '<tr>';
+                    $objTabla .= '<th scope="row">'. $nc.'</th>';
+                    $objTabla .= '<td>'.$value->craft.'</td>'; 
+                    $objTabla .= '<td>'.$value->name.'</td>'; 
+                    $objTabla .= '<td>'.$personas['data']['message'].'</td>';
+                  $objTabla .= '</tr>'; 
                   $nc++;     
-                };    
+                };
+                echo $objTabla;    
               ?>
             </tbody>
           </table>
         </div>
       </div>
-
-     
-
-
-      
-     
-
-  
-  
-
-      
-
-
     </div> <!-- /container -->
+    <hr>
+    <footer class="bd-footer text-muted">
+      <div class="container">
+        <p><a href="https://github.com/ibrito">GitHub</a></p>
+
+        <p><a rel="license" href="http://beteltrix.ddns.net" target="_blank">Beteltrix@2018</a></p>
+      </div>
+    </footer>
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->

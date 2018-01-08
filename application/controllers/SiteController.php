@@ -16,9 +16,15 @@ class SiteController extends CI_Controller {
 
 	public function index()
 	{
-		$datos['titulo']= APP_NAME;
-		$datos['app']= APP_NAME;
+		$datos['titulo']        = 'ISS-DATA';
+        $datos['author']        = APP_AUTHOR;
+        $datos['lang']          = APP_LANG;
+        $datos['description']   = APP_DESCRIPTION;
+        $datos['app']           = APP_NAME;
+
 		$this->load->view('site/headers',$datos);
 		$this->load->view('site/index',$datos);
 	}
+
+	
 }

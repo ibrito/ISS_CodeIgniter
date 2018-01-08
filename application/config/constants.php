@@ -3,7 +3,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 
 define('APP_NAME','ISS_CODEIGNITER');
-
+define('APP_AUTHOR','Beteltrix.ddns.net');
+define('APP_DESCRIPTION','App Ejemplo Codeigniter and JSON');
+define('APP_LANG', 'es');
 /*
 |--------------------------------------------------------------------------
 | Display Debug backtrace

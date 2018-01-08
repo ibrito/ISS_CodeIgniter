@@ -6,6 +6,9 @@
 ** description     : index
 **/
 defined('BASEPATH') OR exit('No direct script access allowed');
+
+/**  aca devbes colocar tu llave generada por google para el map **/
+$llaveGoogle='';
 ?>
 <body>
 
@@ -24,10 +27,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         <div id="navbar" class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
-            <li><a href="<?= base_url('index.php/IssController');?>">Data ISS</a></li>
-            
-            
-            
+            <li><a href="<?= base_url('index.php/IssController');?>">Data ISS</a></li>            
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -45,23 +45,56 @@ defined('BASEPATH') OR exit('No direct script access allowed');
         </div>
         
       </div>
-
-
-      <div class="page-header">
-        <h1>Consulta</h1>
-      </div>
       <p>
         <a class="btn btn-primary" href="<?= base_url('index.php/IssController');?>" role="button">Consulta ISS-JSON</a>
-        
+        <div id="map" style="width:100%;height:400px;"></div>
       </p>
     </div> <!-- /container -->
+    <hr>
     <footer class="bd-footer text-muted">
-  <div class="container">
-    <p><a href="https://github.com/ibrito">GitHub</a></p>
-      
-    <p><a rel="license" href="http://beteltrix.ddns.net" target="_blank">Beteltrix@2018</a></p>
-  </div>
-</footer>
+      <div class="container">
+        <p><a href="https://github.com/ibrito">GitHub</a></p>
+        <p><a rel="license" href="http://beteltrix.ddns.net" target="_blank">Beteltrix@2018</a></p>
+      </div>
+    </footer>
+    
+    <script>      
+      function initMap() {
+        
+        var geoPoint = {lat: 10.4805937, lng: -66.90360629999998};
+       
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: geoPoint
+        });
+
+        var marker = new google.maps.Marker({
+          position: geoPoint,
+          map: map
+        });
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 4,
+          center: geoPoint
+        });
+
+        var marker = new google.maps.Marker({
+          position: geoPoint,
+          map: map
+        });
+
+      }
+    </script>
+
+    
+
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=<?= $llaveGoogle; ?> &callback=initMap">
+    </script>
+
+
+
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
@@ -72,5 +105,6 @@ defined('BASEPATH') OR exit('No direct script access allowed');
     <script src="<?= base_url('assets/js/vendor/holder.min.js');?>"></script>
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="<?= base_url('assets/js/ie10-viewport-bug-workaround.js');?>"></script>
+    
   </body>
 </html>
